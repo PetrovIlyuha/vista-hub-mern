@@ -1,5 +1,5 @@
 import { injectable } from "inversify";
-import User from "../models/User";
+import User from "./User.model";
 
 @injectable()
 export class UserService {

@@ -1,6 +1,6 @@
 import { controller, httpGet } from "inversify-express-utils";
 import { inject } from "inversify";
-import { UserService } from "../services/UserService";
+import { UserService } from "./UserService";
 import { Request, Response } from "express";
 
 @controller("/users")

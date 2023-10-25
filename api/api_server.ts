@@ -5,9 +5,9 @@ import "dotenv/config";
 import { InversifyExpressServer } from "inversify-express-utils";
 
 import { Container } from "inversify";
-import { MongoDBService } from "./services/MongoDbService";
-import { UserService } from "./services/UserService";
-import { UserController } from "./controllers/UserController";
+import { MongoDBService } from "./infra/MongoDbService";
+import { UserService } from "./user/UserService";
+import { UserController } from "./user/UserController";
 
 // Create the Express app
 const app = express();
