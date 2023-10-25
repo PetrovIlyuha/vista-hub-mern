@@ -12,7 +12,6 @@ function classNames(...classes) {
 
 const NavBar = () => {
   const { pathname } = useLocation();
-  console.log(pathname);
   return (
     <Disclosure as="nav" className="bg-white shadow">
       {({ open }) => (
