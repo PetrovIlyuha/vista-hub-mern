@@ -1,13 +1,14 @@
+import "dotenv/config";
 import express from "express";
 import "reflect-metadata";
-import "dotenv/config";
 
 import { InversifyExpressServer } from "inversify-express-utils";
 
 import { Container } from "inversify";
 import { MongoDBService } from "./infra/MongoDbService";
-import { UserService } from "./user/UserService";
+import errorHandlingMiddleware from "./middleware/errorHandlingMiddleware";
 import { UserController } from "./user/UserController";
+import { UserService } from "./user/UserService";
 
 // Create the Express app
 const app = express();
@@ -24,6 +25,7 @@ const server = new InversifyExpressServer(container, app, { rootPath: "/api" });
 // Configure the server
 server.setConfig((app) => {
   app.use(express.json());
+  app.use(errorHandlingMiddleware);
 });
 
 // Initialize and connect to MongoDB before starting the app

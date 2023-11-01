@@ -1,14 +1,9 @@
-import {
-  controller,
-  httpGet,
-  httpPost,
-  queryParam,
-} from "inversify-express-utils";
-import { inject } from "inversify";
-import { UserService } from "./UserService";
 import { Request, Response } from "express";
+import { inject } from "inversify";
+import { controller, httpGet, httpPost } from "inversify-express-utils";
 import { validateUnknownFields } from "../validators/unknownFieldsValidator";
 import { UserDto } from "./User.dto";
+import { UserService } from "./UserService";
 
 @controller("/users")
 export class UserController {
